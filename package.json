@@ -1,0 +1,7 @@
+{
+    "scripts": {
+        "install":"npm-git install",
+        "cypress:open" : "cypress open",
+        "cypress:run" : "cypress run"
+      } 
+}

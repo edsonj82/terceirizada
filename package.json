@@ -1,7 +1,10 @@
 {
     "scripts": {
-        "install":"npm-git install",
-        "cypress:open" : "cypress open",
-        "cypress:run" : "cypress run"
-      } 
+        "install": "npm-git install",
+        "cypress:open": "cypress open",
+        "cypress:run": "cypress run"
+    },
+    "devDependencies": {
+        "faker": "^4.1.0"
+    }
 }

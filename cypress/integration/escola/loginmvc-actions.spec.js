@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 
+
 describe("Login - home page no primeiro acesso", () =>{
     let faker = require('faker')
     let email = faker.internet.email().toLowerCase()

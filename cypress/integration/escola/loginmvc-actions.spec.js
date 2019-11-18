@@ -1,5 +1,10 @@
 /// <reference types="Cypress" />
 
+import { navigate } from '../../page-objects/login-page' 
+
+    beforeEach(() => {
+        navigate()//cy.visit('https://hom-terceirizadas.sme.prefeitura.sp.gov.br/')
+    })
 
 describe("Login - home page no primeiro acesso", () =>{
     let faker = require('faker')
@@ -7,10 +12,6 @@ describe("Login - home page no primeiro acesso", () =>{
     let nome  = faker.name.firstName();
     let sobrenome = faker.name.lastName();
     let rf = faker.internet.email().toLowerCase()
-
-    beforeEach(() => {
-        cy.visit('https://hom-terceirizadas.sme.prefeitura.sp.gov.br/')
-    })
 
     it('validar dados e imagem visiveis na tela de login', () => {
         cy.get('.login-bg').should('be.visible')        

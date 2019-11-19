@@ -11,14 +11,14 @@ import {
         navigate()
     })
 
-describe("Login - home page no primeiro acesso", () =>{
+describe("Login", () =>{
     // let faker = require('faker')
     // let email = faker.internet.email().toLowerCase()
     // let nome  = faker.name.firstName();
     // let sobrenome = faker.name.lastName();
     // let rf = faker.internet.email().toLowerCase()
 
-    it('should view and validate layout', () => {
+    it('should view and validate layout home page', () => {
         validateLayout()
     })
 

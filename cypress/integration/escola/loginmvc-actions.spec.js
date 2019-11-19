@@ -1,29 +1,33 @@
 /// <reference types="Cypress" />
 
-import { navigate } from '../../page-objects/login-page' 
+import { 
+    navigate,
+    validateLayout
+} from '../../page-objects/login-page' 
 
     beforeEach(() => {
         navigate()//cy.visit('https://hom-terceirizadas.sme.prefeitura.sp.gov.br/')
     })
 
 describe("Login - home page no primeiro acesso", () =>{
-    let faker = require('faker')
-    let email = faker.internet.email().toLowerCase()
-    let nome  = faker.name.firstName();
-    let sobrenome = faker.name.lastName();
-    let rf = faker.internet.email().toLowerCase()
+    // let faker = require('faker')
+    // let email = faker.internet.email().toLowerCase()
+    // let nome  = faker.name.firstName();
+    // let sobrenome = faker.name.lastName();
+    // let rf = faker.internet.email().toLowerCase()
 
-    it('validar dados e imagem visiveis na tela de login', () => {
-        cy.get('.login-bg').should('be.visible')        
-        cy.get('.col-form-label').should('contain','E-mail')
-        cy.get('[data-cy=email]').should('be.visible')
-        cy.get('.col-form-label').should('contain','Senha')
-        cy.get('[data-cy=password]').should('be.visible')
-        cy.get('a').should('contain','Esqueci minha senha')
-        cy.get('[data-cy=Acessar]').should('be.disabled')
-        cy.get('a').should('contain','Ainda não sou cadastrado')
-        cy.get('.logo-sigpae').should('be.visible')
-        cy.get('.logo-prefeitura').should('be.visible')
+    it.only('should view and validate layout', () => {//it('validar dados e imagem visiveis na tela de login', () => {
+        validateLayout()
+    // cy.get('.login-bg').should('be.visible')        
+        // cy.get('.col-form-label').should('contain','E-mail')
+        // cy.get('[data-cy=email]').should('be.visible')
+        // cy.get('.col-form-label').should('contain','Senha')
+        // cy.get('[data-cy=password]').should('be.visible')
+        // cy.get('a').should('contain','Esqueci minha senha')
+        // cy.get('[data-cy=Acessar]').should('be.disabled')
+        // cy.get('a').should('contain','Ainda não sou cadastrado')
+        // cy.get('.logo-sigpae').should('be.visible')
+        // cy.get('.logo-prefeitura').should('be.visible')
     })
 
     it('validar acesso desabilitado para campo senha em branco', () => {

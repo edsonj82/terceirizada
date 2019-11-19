@@ -18,16 +18,6 @@ describe("Login - home page no primeiro acesso", () =>{
 
     it.only('should view and validate layout', () => {//it('validar dados e imagem visiveis na tela de login', () => {
         validateLayout()
-    // cy.get('.login-bg').should('be.visible')        
-        // cy.get('.col-form-label').should('contain','E-mail')
-        // cy.get('[data-cy=email]').should('be.visible')
-        // cy.get('.col-form-label').should('contain','Senha')
-        // cy.get('[data-cy=password]').should('be.visible')
-        // cy.get('a').should('contain','Esqueci minha senha')
-        // cy.get('[data-cy=Acessar]').should('be.disabled')
-        // cy.get('a').should('contain','Ainda não sou cadastrado')
-        // cy.get('.logo-sigpae').should('be.visible')
-        // cy.get('.logo-prefeitura').should('be.visible')
     })
 
     it('validar acesso desabilitado para campo senha em branco', () => {

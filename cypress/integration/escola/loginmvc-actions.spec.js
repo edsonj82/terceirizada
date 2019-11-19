@@ -3,11 +3,12 @@
 import { 
     navigate,
     validateLayout,
-    validateBlankFields
+    validateBlankFields,
+    validateButtonDisabled
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
-        navigate()//cy.visit('https://hom-terceirizadas.sme.prefeitura.sp.gov.br/')
+        navigate()
     })
 
 describe("Login - home page no primeiro acesso", () =>{
@@ -17,20 +18,17 @@ describe("Login - home page no primeiro acesso", () =>{
     // let sobrenome = faker.name.lastName();
     // let rf = faker.internet.email().toLowerCase()
 
-    it('should view and validate layout', () => {//it('validar dados e imagem visiveis na tela de login', () => {
+    it('should view and validate layout', () => {
         validateLayout()
     })
 
-    it.only('validar acesso desabilitado para campo senha em branco', () => {
+    it('should validate blank fields', () => {
         validateBlankFields()
-        // cy.get('[data-cy=email]').type('escola@admin.com')
-        // cy.get('[data-cy=Acessar]').should('be.disabled')
     })
 
-    it('validar acesso desabilitado para campo e-mail em branco', () => {
-        cy.get('[data-cy=password]').type('adminadmin')
-        cy.get('[data-cy=Acessar]').should('be.disabled')
-    })
+    it.only('should validate button disabled', () => {
+        validateButtonDisabled()
+     })
 
     it('acessar SIGPAE', () => {
         cy.get('[data-cy=email]').type('escola@admin.com')

@@ -39,9 +39,19 @@ export function validateBlankFields() {
     cy.get('.error-message').should('contain','Campo obrigatório')
 }
 
-export function validateAcessarDisabled() {
+export function validateButtonDisabled() {
+    cy.get('[data-cy=email]').click()
+    cy.get('[data-cy=password]').click()   
+    cy.get('[data-cy=Acessar]').should('be.disabled')
+    //Password
     cy.get('[data-cy=email]').type('escola@admin.com')
+    cy.get('[data-cy=Acessar]').should('be.disabled')
     cy.get('[data-cy=password]').click()
-    cy.get('[data-cy=Acessar]').click()
-    //cy.get('[data-cy=Acessar]').should('be.disabled')
+    cy.get('[data-cy=Acessar]').should('be.disabled')
+    cy.get('[data-cy=email]').clear()
+    //E-mail
+    cy.get('[data-cy=password]').type('adminadmin')
+    cy.get('[data-cy=Acessar]').should('be.disabled')
+    cy.get('[data-cy=email]').click()
+    cy.get('[data-cy=Acessar]').should('be.disabled')
 }

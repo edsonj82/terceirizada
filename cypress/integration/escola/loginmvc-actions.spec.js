@@ -2,7 +2,8 @@
 
 import { 
     navigate,
-    validateLayout
+    validateLayout,
+    validateBlankFields
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
@@ -16,13 +17,14 @@ describe("Login - home page no primeiro acesso", () =>{
     // let sobrenome = faker.name.lastName();
     // let rf = faker.internet.email().toLowerCase()
 
-    it.only('should view and validate layout', () => {//it('validar dados e imagem visiveis na tela de login', () => {
+    it('should view and validate layout', () => {//it('validar dados e imagem visiveis na tela de login', () => {
         validateLayout()
     })
 
-    it('validar acesso desabilitado para campo senha em branco', () => {
-        cy.get('[data-cy=email]').type('escola@admin.com')
-        cy.get('[data-cy=Acessar]').should('be.disabled')
+    it.only('validar acesso desabilitado para campo senha em branco', () => {
+        validateBlankFields()
+        // cy.get('[data-cy=email]').type('escola@admin.com')
+        // cy.get('[data-cy=Acessar]').should('be.disabled')
     })
 
     it('validar acesso desabilitado para campo e-mail em branco', () => {

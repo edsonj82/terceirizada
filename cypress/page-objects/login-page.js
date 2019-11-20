@@ -55,3 +55,10 @@ export function validateButtonDisabled() {
     cy.get('[data-cy=email]').click()
     cy.get('[data-cy=Acessar]').should('be.disabled')
 }
+
+export function accessSIGPAE() {
+    cy.get('[data-cy=email]').type('escola@admin.com')
+    cy.get('[data-cy=password]').type('adminadmin')
+    cy.get('[data-cy=Acessar]').click()
+    cy.get(':nth-child(5) > .text-center > .text-bold').should('contain','EMEF JOSE ERMIRIO DE MORAIS, SEN.')
+}

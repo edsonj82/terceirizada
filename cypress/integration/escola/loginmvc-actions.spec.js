@@ -4,7 +4,8 @@ import {
     navigate,
     validateLayout,
     validateBlankFields,
-    validateButtonDisabled
+    validateButtonDisabled,
+    accessSIGPAE
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
@@ -26,14 +27,12 @@ describe("Login", () =>{
         validateBlankFields()
     })
 
-    it.only('should validate button disabled', () => {
-        validateButtonDisabled()
+    it('should validate button disabled', () => {
+        validateButtonDisabled()        
      })
 
-    it('acessar SIGPAE', () => {
-        cy.get('[data-cy=email]').type('escola@admin.com')
-        cy.get('[data-cy=password]').type('adminadmin')
-        cy.get('[data-cy=Acessar]').click()
+    it.only('should access SIGPAE', () => {
+        accessSIGPAE()
     })
     
     it('esqueci minha senha', () => {

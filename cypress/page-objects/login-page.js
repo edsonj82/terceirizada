@@ -67,3 +67,8 @@ export function validateButtonVoltar() {
     cy.get('[data-cy=esqueci-senha]').click()
     cy.get('[data-cy="Voltar"]').click()
 }
+
+export function validateButtonCancelar() {
+    cy.get('[data-cy=esqueci-senha]').click()
+    cy.get('[data-cy="Cancelar"]').click()  
+}

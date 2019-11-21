@@ -42,7 +42,11 @@ describe("Login", () =>{
         validateLayout()
     })
     
-
+    it.only('should validate button "Cancelar" in "Recuperar Senha"', () => {        
+        validateButtonCancelar()
+        validateLayout()
+    })
+    
     it('esqueci minha senha', () => {
         //.mt-2 > .hyperlink
         //TODO: FIX IT

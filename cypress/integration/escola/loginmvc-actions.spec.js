@@ -37,6 +37,11 @@ describe("Login", () =>{
         accessSIGPAE()
     })
 
+    it('should validate button "Voltar" in "Recuperar Senha"', () => {        
+        validateButtonVoltar()
+        validateLayout()
+    })
+    
 
     it('esqueci minha senha', () => {
         //.mt-2 > .hyperlink

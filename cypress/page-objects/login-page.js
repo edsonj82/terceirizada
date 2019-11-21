@@ -62,3 +62,8 @@ export function accessSIGPAE() {
     cy.get('[data-cy=Acessar]').click()
     cy.get(':nth-child(5) > .text-center > .text-bold').should('contain','EMEF JOSE ERMIRIO DE MORAIS, SEN.')
 }
+
+export function validateButtonVoltar() {
+    cy.get('[data-cy=esqueci-senha]').click()
+    cy.get('[data-cy="Voltar"]').click()
+}

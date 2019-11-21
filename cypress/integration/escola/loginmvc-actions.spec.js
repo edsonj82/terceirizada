@@ -6,7 +6,8 @@ import {
     validateBlankFields,
     validateButtonDisabled,
     accessSIGPAE,
-    validateButtonVoltar
+    validateButtonVoltar,
+    validateButtonCancelar
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
@@ -35,11 +36,15 @@ describe("Login", () =>{
     it('should access SIGPAE', () => {
         accessSIGPAE()
     })
-    it.only('should validate button "Voltar" in "Recuperar Senha"', () => {        
+    it('should validate button "Voltar" in "Recuperar Senha"', () => {        
         validateButtonVoltar()
         validateLayout()
     })
 
+    it.only('should validate button "Cancelar" in "Recuperar Senha"', () => {        
+        validateButtonCancelar()
+        validateLayout()
+    })
 
     it('esqueci minha senha', () => {
         //.mt-2 > .hyperlink

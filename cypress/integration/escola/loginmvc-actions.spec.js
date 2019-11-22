@@ -7,7 +7,8 @@ import {
     validateButtonDisabled,
     accessSIGPAE,
     validateButtonVoltar,
-    validateButtonCancelar
+    validateButtonCancelar,
+    validateRecuperacaoSenhaLayout
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
@@ -21,7 +22,7 @@ describe("Login", () =>{
     // let sobrenome = faker.name.lastName();
     // let rf = faker.internet.email().toLowerCase()
 
-    it('should view and validate layout home page', () => {
+    it('should view and validate layout "Login" home page', () => {
         validateLayout()
     })
 
@@ -37,12 +38,17 @@ describe("Login", () =>{
         accessSIGPAE()
     })
 
-    it('should validate button "Voltar" in "Recuperar Senha"', () => {        
+    //Recuperação de Senha
+    it.only('should view and validate layout "Recuperação de Senha"', () => {
+        validateRecuperacaoSenhaLayout()
+    })
+    
+    it('should validate button "Voltar" in "Recuperação de Senha"', () => {        
         validateButtonVoltar()
         validateLayout()
     })
     
-    it.only('should validate button "Cancelar" in "Recuperar Senha"', () => {        
+    it('should validate button "Cancelar" in "Recuperação de Senha"', () => {        
         validateButtonCancelar()
         validateLayout()
     })

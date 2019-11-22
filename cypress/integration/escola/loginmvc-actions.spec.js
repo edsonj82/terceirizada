@@ -8,7 +8,8 @@ import {
     accessSIGPAE,
     validateButtonVoltar,
     validateButtonCancelar,
-    validateRecuperacaoSenhaLayout
+    validateRecuperacaoSenhaLayout,
+    IncorrectRF
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
@@ -39,7 +40,7 @@ describe("Login", () =>{
     })
 
     //Recuperação de Senha
-    it.only('should view and validate layout "Recuperação de Senha"', () => {
+    it('should view and validate layout "Recuperação de Senha"', () => {
         validateRecuperacaoSenhaLayout()
     })
     
@@ -50,6 +51,11 @@ describe("Login", () =>{
     
     it('should validate button "Cancelar" in "Recuperação de Senha"', () => {        
         validateButtonCancelar()
+        validateLayout()
+    })
+
+    it.only('should validate RF Incorrect', () => {        
+        IncorrectRF()
         validateLayout()
     })
     

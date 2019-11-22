@@ -9,7 +9,8 @@ import {
     validateButtonVoltar,
     validateButtonCancelar,
     validateRecuperacaoSenhaLayout,
-    IncorrectRF
+    RFInvalid,
+    EmailInvalid
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
@@ -54,8 +55,13 @@ describe("Login", () =>{
         validateLayout()
     })
 
-    it.only('should validate RF Incorrect', () => {        
-        IncorrectRF()
+    it('should validate RF Invalid', () => {        
+        RFInvalid()
+        validateLayout()
+    })
+
+    it.only('should validate Email Invalid', () => {        
+        EmailInvalid()
         validateLayout()
     })
     

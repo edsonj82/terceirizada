@@ -8,9 +8,9 @@ import {
     accessSIGPAE
 } from '../../page-objects/login-page' 
 
-    beforeEach(() => {
-        navigate()
-    })
+beforeEach(() => {
+    navigate()
+})
 
 describe("Login", () =>{
     // let faker = require('faker')

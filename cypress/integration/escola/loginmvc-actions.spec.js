@@ -8,7 +8,7 @@ import {
     accessSIGPAE,
     validateButtonVoltar,
     validateButtonCancelar,
-    validateRecuperacaoSenhaLayout,
+
     RFInvalid,
     EmailInvalid
 } from '../../page-objects/login-page' 
@@ -41,9 +41,7 @@ describe("Login", () =>{
     })
 
     //Recuperação de Senha
-    it('should view and validate layout "Recuperação de Senha"', () => {
-        validateRecuperacaoSenhaLayout()
-    })
+
     
     it('should validate button "Voltar" in "Recuperação de Senha"', () => {        
         validateButtonVoltar()

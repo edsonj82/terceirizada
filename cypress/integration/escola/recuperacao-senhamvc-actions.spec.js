@@ -33,13 +33,18 @@ describe("Recuperação de Senha", () =>{
 
     it('should validate RF Invalid', () => {        
         rfInvalid()
-        //validateLayout()
     })
 
     it('should validate Email Invalid', () => {        
         emailInvalid()
-        //validateLayout()
     })
+
+    it.only('should validate button "Continuar" in "Recuperação de Senha"', () => {
+        rfInvalid()
+        validateLayout()
+        emailInvalid()
+        validateLayout()
+    });
         //TODO
     // it('esqueci minha senha', () => {
     //     //.mt-2 > .hyperlink

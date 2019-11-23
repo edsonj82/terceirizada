@@ -5,12 +5,7 @@ import {
     validateLayout,
     validateBlankFields,
     validateButtonDisabled,
-    accessSIGPAE,
-    validateButtonVoltar,
-    validateButtonCancelar,
-
-    RFInvalid,
-    EmailInvalid
+    accessSIGPAE
 } from '../../page-objects/login-page' 
 
     beforeEach(() => {
@@ -40,37 +35,7 @@ describe("Login", () =>{
         accessSIGPAE()
     })
 
-    //Recuperação de Senha
-
-    
-    it('should validate button "Voltar" in "Recuperação de Senha"', () => {        
-        validateButtonVoltar()
-        validateLayout()
-    })
-    
-    it('should validate button "Cancelar" in "Recuperação de Senha"', () => {        
-        validateButtonCancelar()
-        validateLayout()
-    })
-
-    it('should validate RF Invalid', () => {        
-        RFInvalid()
-        validateLayout()
-    })
-
-    it.only('should validate Email Invalid', () => {        
-        EmailInvalid()
-        validateLayout()
-    })
-    
-    it('esqueci minha senha', () => {
-        //.mt-2 > .hyperlink
-        //TODO: FIX IT
-        //cy.get('[data-cy=esqueci-minha-senha]').click()
-        //cy.get('.text-center').should('be.visible')
-        cy.get('.text-center').click()
-    })
-
+    //CADASTRO
     it('ainda não sou cadastrado - validar dados e imagem visiveis na tela de cadastro do usuário', () => {
         //TODO: FIX IT
         // cy.get('a').click()

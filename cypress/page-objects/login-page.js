@@ -62,35 +62,3 @@ export function accessSIGPAE() {
     cy.get('[data-cy=Acessar]').click()
     cy.get(':nth-child(5) > .text-center > .text-bold').should('contain','EMEF JOSE ERMIRIO DE MORAIS, SEN.')//refactoring
 }
-//Recuperacao de Senha
-
-
-export function validateButtonVoltar() {
-    cy.get('[data-cy=esqueci-senha]').click()
-    cy.get('[data-cy=Voltar]').click()
-}
-
-export function validateButtonCancelar() {
-    cy.get('[data-cy=esqueci-senha]').click()
-    cy.get('[data-cy=Cancelar]').click()
-}
-
-export function RFInvalid() {
-    cy.get('[data-cy=esqueci-senha]').click()
-    cy.get('[data-cy=email_ou_rf]').type('123456789')
-    cy.get('[data-cy=Continuar]').click()
-    cy.get('.div-circular-vermelho').should('be.visible')
-    cy.get('.col-8 > :nth-child(1)').should('contain','Você não tem um e-mail cadastrado para recuperar sua senha.')//refactoring
-    cy.get('.col-8 > :nth-child(2)').should('contain','Para restabelecer o seu acesso, procure o Diretor da sua unidade.')//refactoring
-    cy.get('[data-cy=Continuar]').click()
-}
-
-export function EmailInvalid() {
-    cy.get('[data-cy=esqueci-senha]').click()
-    cy.get('[data-cy=email_ou_rf]').type('xpto@gmail.com')
-    cy.get('[data-cy=Continuar]').click()
-    cy.get('.div-circular-vermelho').should('be.visible')
-    cy.get('.col-8 > :nth-child(1)').should('contain','Você não tem um e-mail cadastrado para recuperar sua senha.')//refactoring
-    cy.get('.col-8 > :nth-child(2)').should('contain','Para restabelecer o seu acesso, procure o Diretor da sua unidade.')//refactoring
-    cy.get('[data-cy=Continuar]').click()
-}

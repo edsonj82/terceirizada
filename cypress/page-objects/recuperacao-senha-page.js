@@ -48,3 +48,16 @@ export function emailInvalid() {
     cy.get('.col-8 > :nth-child(2)').should('contain','Para restabelecer o seu acesso, procure o Diretor da sua unidade.')//refactoring
     cy.get('[data-cy=Continuar]').click()
 }
+
+export function accessRecuperacaoSenha() {
+    cy.get('[data-cy=esqueci-senha]').click()
+    cy.get('[data-cy=email_ou_rf]').type('escola@admin.com')
+    cy.get('[data-cy=Continuar]').click()
+}
+
+export function emailValid() {    
+    cy.get('.div-circular-verde').should('be.visible')
+    cy.get('.alinha-centro > div > :nth-child(1)').should('contain','e****a@admin.com')//refactoring
+    cy.get('.alinha-centro > div > :nth-child(2)').should('contain','Verifique sua caixa de entrada!')//refactoring
+    cy.get('[data-cy=Continuar]').click()
+}

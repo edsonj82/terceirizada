@@ -6,7 +6,9 @@ import{
     validateButtonVoltar,
     validateButtonCancelar,
     rfInvalid,
-    emailInvalid
+    emailInvalid,
+    accessRecuperacaoSenha,
+    emailValid
 } from '../../page-objects/recuperacao-senha-page.js'
 
 import{validateLayout } from '../../page-objects/login-page'  
@@ -39,18 +41,15 @@ describe("Recuperação de Senha", () =>{
         emailInvalid()
     })
 
-    it.only('should validate button "Continuar" in "Recuperação de Senha"', () => {
+    it('should validate button "Continuar" in "Recuperação de Senha"', () => {
         rfInvalid()
         validateLayout()
         emailInvalid()
         validateLayout()
     });
-        //TODO
-    // it('esqueci minha senha', () => {
-    //     //.mt-2 > .hyperlink
-    //     //TODO: FIX IT
-    //     //cy.get('[data-cy=esqueci-minha-senha]').click()
-    //     //cy.get('.text-center').should('be.visible')
-    //     cy.get('.text-center').click()
-    // })
+
+    it.only('should access "Recuperação de Senha"', () => {
+        accessRecuperacaoSenha()
+        emailValid()
+    });
 })

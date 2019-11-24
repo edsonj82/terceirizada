@@ -7,7 +7,8 @@ import{
     validateButtonCancelar,
     rfInvalid,
     emailInvalid,
-    accessRecuperacaoSenha
+    accessRecuperacaoSenha,
+    emailValid
 } from '../../page-objects/recuperacao-senha-page.js'
 
 import{validateLayout } from '../../page-objects/login-page'  
@@ -48,6 +49,7 @@ describe("Recuperação de Senha", () =>{
     });
 
     it.only('should access "Recuperação de Senha"', () => {
-        accessRecuperacaoSenha()   
+        accessRecuperacaoSenha()
+        emailValid()
     });
 })

@@ -54,3 +54,10 @@ export function accessRecuperacaoSenha() {
     cy.get('[data-cy=email_ou_rf]').type('escola@admin.com')
     cy.get('[data-cy=Continuar]').click()
 }
+
+export function emailValid() {    
+    cy.get('.div-circular-verde').should('be.visible')
+    cy.get('.alinha-centro > div > :nth-child(1)').should('contain','e****a@admin.com')//refactoring
+    cy.get('.alinha-centro > div > :nth-child(2)').should('contain','Verifique sua caixa de entrada!')//refactoring
+    cy.get('[data-cy=Continuar]').click()
+}

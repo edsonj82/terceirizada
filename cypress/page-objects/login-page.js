@@ -28,6 +28,7 @@ export function validateLayout() {
     
     cy.get('.logo-sigpae').should('be.visible')
     
+
     cy.get('.logo-prefeitura').should('be.visible')
 }
 

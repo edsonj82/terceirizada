@@ -13,16 +13,22 @@ export function paramLogin() {
 }
 
 export function validateLayout() {
-    cy.get('.login-bg').should('be.visible')        
-        cy.get('.col-form-label').should('contain','E-mail')
-        cy.get('[data-cy=email]').should('be.visible')
-        cy.get('.col-form-label').should('contain','Senha')
-        cy.get('[data-cy=password]').should('be.visible')
-        cy.get('a').should('contain','Esqueci minha senha')
-        cy.get('[data-cy=Acessar]').should('be.disabled')
-        cy.get('a').should('contain','Ainda não sou cadastrado')
-        cy.get('.logo-sigpae').should('be.visible')
-        cy.get('.logo-prefeitura').should('be.visible')
+    cy.get('.login-bg').should('be.visible')
+
+    cy.get('.col-form-label').should('contain','E-mail')
+    cy.get('[data-cy=email]').should('be.visible')
+    
+    cy.get('.col-form-label').should('contain','Senha')
+    cy.get('[data-cy=password]').should('be.visible')
+    
+    cy.get('a').should('contain','Esqueci minha senha')
+    cy.get('[data-cy=Acessar]').should('be.disabled')
+    
+    cy.get('a').should('contain','Ainda não sou cadastrado')
+    
+    cy.get('.logo-sigpae').should('be.visible')
+    
+    cy.get('.logo-prefeitura').should('be.visible')
 }
 
 export function validateBlankFields() {

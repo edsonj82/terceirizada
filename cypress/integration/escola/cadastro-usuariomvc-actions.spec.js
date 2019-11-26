@@ -1,7 +1,8 @@
 ///<reference types="Cypress" />
 
 import {
-    navigate, validateCadastroUsuarioLayout, validateMessageCampoObrigatorio, validateRequiredFieldEmail
+    navigate, validateCadastroUsuarioLayout, validateMessageCampoObrigatorio, validateRequiredFieldEmail,
+    validateRequiredFieldRF
 } from '../../page-objects/cadastro-usuario-page'
 
 beforeEach(()=>{
@@ -18,9 +19,13 @@ describe('Cadastro de Usuário', ()=>{
         validateMessageCampoObrigatorio()
     })
 
-    it.only('should validate required field "E-mail"', () => {
+    it('should validate required field "E-mail"', () => {
         validateRequiredFieldEmail()
-    });
+    })
+
+    it.only('should validate required field "RF"', () => {
+        validateRequiredFieldRF()
+    })
 
     //TODO: FIX IT - Validar "Campos Obrigatórios"
     it('validar cadastro desabilitado para campos nome sobrenome rf vinculo senha e confirmacao senha em branco', () => {

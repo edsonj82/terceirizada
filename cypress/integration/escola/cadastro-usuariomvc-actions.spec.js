@@ -1,29 +1,27 @@
 ///<reference types="Cypress" />
 
 import {
-    navigate, validateCadastroUsuarioLayout, validateRequiredFields
-} from '../../page-objects/usuario-page'
+    navigate, validateCadastroUsuarioLayout, validateMessageCampoObrigatorio, validateRequiredFieldEmail
+} from '../../page-objects/cadastro-usuario-page'
 
 beforeEach(()=>{
     navigate()
 })
 
 describe('Cadastro de Usuário', ()=>{
-    // let faker = require('faker')
-    // let email = faker.internet.email().toLowerCase()
-    // let nome  = faker.name.firstName();
-    // let sobrenome = faker.name.lastName();
-    // let rf = faker.internet.email().toLowerCase()
 
     it('should view and validate layout "Cadastro de Usuário"', () => {
         validateCadastroUsuarioLayout()
     })
 
-    //TODO: FIX IT
-    it.only('should validate all required fields ', () => {
-        validateRequiredFields()
+    it('should validate all required fields ', () => {
+        validateMessageCampoObrigatorio()
     })
-    
+
+    it.only('should validate required field "E-mail"', () => {
+        validateRequiredFieldEmail()
+    });
+
     //TODO: FIX IT - Validar "Campos Obrigatórios"
     it('validar cadastro desabilitado para campos nome sobrenome rf vinculo senha e confirmacao senha em branco', () => {
         cy.get('[data-cy=email]').type(email)

@@ -4,6 +4,13 @@ export function navigate() {
     cy.visit('https://hom-terceirizadas.sme.prefeitura.sp.gov.br/')
 }
 
+
+let faker = require('faker')
+let email = faker.internet.email().toLowerCase()
+let nome  = faker.name.firstName();
+let sobrenome = faker.name.lastName();
+let rf = faker.internet.email().toLowerCase()
+
 export function validateCadastroUsuarioLayout() {
 
     cy.get('[data-cy=ainda-nao-cadastrado]').click()
@@ -29,13 +36,14 @@ export function validateCadastroUsuarioLayout() {
     cy.get('[data-cy=Cadastrar]').should('be.disabled')
     cy.get('.logo-prefeitura').should('be.visible')
 }
-
-export function validateRequiredFields() {
+    
+export function validateMessageCampoObrigatorio() {
     cy.get('[data-cy=ainda-nao-cadastrado]').click()
 
     cy.get('[data-cy=email]').click()
     cy.get('[data-cy=Cadastrar]').click()
     cy.get('.error-message').should('contain','Campo obrigatório')
+    cy.get('[data-cy=email]').type(email)
 
     cy.get('[data-cy=registro_funcional]').click()
     cy.get('[data-cy=Cadastrar]').click()
@@ -52,4 +60,15 @@ export function validateRequiredFields() {
     cy.get('[data-cy=confirmar_password]').click()
     cy.get('[data-cy=Cadastrar]').click()
     cy.get(':nth-child(3) > :nth-child(2) > .input > .error-or-warning-message > .error-message').should('contain','Campo obrigatório')
+}
+
+export function validateRequiredFieldEmail() {
+    cy.get('[data-cy=ainda-nao-cadastrado]').click()
+
+    cy.get('[data-cy=email]').click()
+    cy.get('[data-cy=Cadastrar]').click()
+    cy.get('.error-message').should('contain','Campo obrigatório')
+    cy.get('[data-cy=email]').type(email)
+    cy.get('[data-cy=Cadastrar]').click()
+    cy.get('.error-message').should('not.be.visible')
 }

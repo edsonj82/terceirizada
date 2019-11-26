@@ -4,14 +4,6 @@ export function navigate() {
     cy.visit('https://hom-terceirizadas.sme.prefeitura.sp.gov.br/')
 }
 
-export function paramLogin() {
-    let faker = require('faker')
-    let email = faker.internet.email().toLowerCase()
-    let nome  = faker.name.firstName();
-    let sobrenome = faker.name.lastName();
-    let rf = faker.internet.email().toLowerCase()
-}
-
 export function validateLayout() {
     cy.get('.login-bg').should('be.visible')
 

@@ -82,3 +82,15 @@ export function validateRequiredFieldRF() {
     cy.get('[data-cy=Cadastrar]').click()
     cy.get(':nth-child(2) > :nth-child(1) > .input > .error-or-warning-message > .error-message').should('not.be.visible')
 }
+
+export function validateRequiredFieldCPF() {
+    cy.get('[data-cy=ainda-nao-cadastrado]').click()
+
+    cy.get('[data-cy=cpf]').click()
+    cy.get('[data-cy=Cadastrar]').click()
+    cy.get(':nth-child(2) > .input > .error-or-warning-message > .error-message').should('contain','Campo obrigatório')
+    cy.get('[data-cy=cpf]').type('123.456.789-10')
+    cy.get('[data-cy=Cadastrar]').click()
+    cy.get(':nth-child(2) > .input > .error-or-warning-message > .error-message').should('not.be.visible')
+    
+}

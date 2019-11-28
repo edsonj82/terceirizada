@@ -4,7 +4,6 @@ export function navigate() {
     cy.visit('https://hom-terceirizadas.sme.prefeitura.sp.gov.br/')
 }
 
-
 let faker = require('faker')
 let email = faker.internet.email().toLowerCase()
 let nome  = faker.name.firstName();

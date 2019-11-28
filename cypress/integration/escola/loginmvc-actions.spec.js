@@ -1,11 +1,7 @@
 /// <reference types="Cypress" />
 
 import { 
-    navigate,
-    validateLayout,
-    validateBlankFields,
-    validateButtonDisabled,
-    accessSIGPAE
+    navigate, validateLayout, validateBlankFields, validateButtonDisabled, accessSIGPAE
 } from '../../page-objects/login-page' 
 
 beforeEach(() => {

@@ -1,14 +1,8 @@
 /// <reference types="Cypress"/>
 
 import{
-    navigate,
-    validateRecuperacaoSenhaLayout,
-    validateButtonVoltar,
-    validateButtonCancelar,
-    rfInvalid,
-    emailInvalid,
-    accessRecuperacaoSenha,
-    emailValid
+    navigate, validateRecuperacaoSenhaLayout, validateButtonVoltar, validateButtonCancelar, rfInvalid,
+    emailInvalid, accessRecuperacaoSenha, emailValid
 } from '../../page-objects/recuperacao-senha-page.js'
 
 import{validateLayout } from '../../page-objects/login-page'  

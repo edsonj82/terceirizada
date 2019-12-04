@@ -93,16 +93,26 @@ export function validateRequiredFieldCPF() {
     
 }
 
-export function validateQuantityCharacter() {
+export function validateQuantityCharacterRF() {
     cy.get('[data-cy=ainda-nao-cadastrado]').click()
     
-    cy.get('[data-cy=email]').type(email)
+    //cy.get('[data-cy=email]').type(email)
     cy.get('[data-cy=registro_funcional]').type('asdad')
-    cy.get('[data-cy=cpf]').type('123.456.789-10')
-    cy.get('[data-cy=password]').type('ABC@123')
-    cy.get('[data-cy=confirmar_password]').type('ABC@123')
+    //cy.get('[data-cy=cpf]').type('123.456.789-10')
+    //cy.get('[data-cy=password]').type('ABC@123')
+    //cy.get('[data-cy=confirmar_password]').type('ABC@123')
     cy.get('[data-cy=Cadastrar]').click()
 
     cy.get('.error-message').should('be.visible')
     cy.get('.error-message').should('contain','Deve ter exatamente 7 caracteres')
+}
+
+export function validateQuantityCharacterCPF() {
+    cy.get('[data-cy=ainda-nao-cadastrado]').click()
+    
+    cy.get('[data-cy=cpf]').type('123.456.78')
+    cy.get('[data-cy=Cadastrar]').click()
+
+    cy.get(':nth-child(2) > .input > .error-or-warning-message > .error-message').should('be.visible')
+    cy.get(':nth-child(2) > .input > .error-or-warning-message > .error-message').should('contain','Deve ter exatamente 11 caracteres')
 }

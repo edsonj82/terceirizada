@@ -2,7 +2,7 @@
 
 import {
     navigate, validateCadastroUsuarioLayout, validateMessageCampoObrigatorio, validateRequiredFieldEmail,
-    validateRequiredFieldRF, validateRequiredFieldCPF
+    validateRequiredFieldRF, validateRequiredFieldCPF, validateQuantityCharacter
 } from '../../page-objects/cadastro-usuario-page'
 
 beforeEach(()=>{
@@ -27,7 +27,12 @@ describe('Cadastro de Usuário', ()=>{
         validateRequiredFieldRF()
     })
 
-    it.only('should validate required field "CPF"', () => {
+    it('should validate required field "CPF"', () => {
         validateRequiredFieldCPF()
     })
+
+    it.only('should be seven characters "RF"' , () => {
+        validateQuantityCharacter()
+    })
+
 })

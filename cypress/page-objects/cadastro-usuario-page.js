@@ -6,8 +6,6 @@ export function navigate() {
 
 let faker = require('faker')
 let email = faker.internet.email().toLowerCase()
-let nome  = faker.name.firstName();
-let sobrenome = faker.name.lastName();
 let rf = faker.internet.email().toLowerCase()
 
 export function validateCadastroUsuarioLayout() {
@@ -93,4 +91,18 @@ export function validateRequiredFieldCPF() {
     cy.get('[data-cy=Cadastrar]').click()
     cy.get(':nth-child(2) > .input > .error-or-warning-message > .error-message').should('not.be.visible')
     
+}
+
+export function validateQuantityCharacter() {
+    cy.get('[data-cy=ainda-nao-cadastrado]').click()
+    
+    cy.get('[data-cy=email]').type(email)
+    cy.get('[data-cy=registro_funcional]').type('asdad')
+    cy.get('[data-cy=cpf]').type('123.456.789-10')
+    cy.get('[data-cy=password]').type('ABC@123')
+    cy.get('[data-cy=confirmar_password]').type('ABC@123')
+    cy.get('[data-cy=Cadastrar]').click()
+
+    cy.get('.error-message').should('be.visible')
+    cy.get('.error-message').should('contain','Deve ter exatamente 7 caracteres')
 }
